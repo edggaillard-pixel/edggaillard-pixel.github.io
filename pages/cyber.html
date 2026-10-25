@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersécurité - Edgar Gaillard</title>
+<meta name="description" content="Edgar Gaillard et la cybersécurité : TryHackMe, OWASP Top 10, Secure Notes et websec-scanner.">
+<link rel="canonical" href="https://edggaillard-pixel.github.io/pages/cyber.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cybersécurité - Edgar Gaillard">
+<meta property="og:description" content="Edgar Gaillard et la cybersécurité : TryHackMe, OWASP Top 10, Secure Notes et websec-scanner.">
+<meta property="og:url" content="https://edggaillard-pixel.github.io/pages/cyber.html">
+<meta property="og:image" content="https://edggaillard-pixel.github.io/images/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="sous-page" data-rubrique="cyber">
+
+<canvas id="matrix"></canvas>
+<div id="ombre"></div>
+
+<div class="barre">
+  <a class="logo vers-menu" href="../index.html">&gt; edgar.gaillard<span>_</span></a>
+  <a class="retour vers-menu" href="../index.html">← menu</a>
+</div>
+
+<main class="page">
+  <header class="tete">
+    <div class="chemin">~/edgar/<b>cyber</b></div>
+    <h1><em>Cyber</em>sécurité</h1>
+    <p class="intro">Comprendre comment un système peut être attaqué pour concevoir des applications plus sûres.</p>
+  </header>
+
+  <section class="section">
+    <h2>Mon approche</h2>
+    <p>Je me forme en <strong>autodidacte</strong> à la sécurité informatique, principalement sur la plateforme
+    <strong>TryHackMe</strong>. Ce travail me sert directement en développement : je pense à la sécurité dès la conception,
+    et pas seulement à la fin.</p>
+    <p>Je mets ces connaissances en pratique dans mes propres projets, des deux côtés : <strong>Secure Notes</strong>,
+    une application construite pour résister aux attaques de l'OWASP Top 10, et <strong>websec-scanner</strong>,
+    un outil qui audite la configuration de sécurité d'un site web.</p>
+  </section>
+
+  <section class="section">
+    <h2>Thèmes travaillés</h2>
+    <div class="grille-2">
+      <div class="carte">
+        <h3>Linux</h3>
+        <p>Ligne de commande, système de fichiers, permissions et administration de base.</p>
+      </div>
+      <div class="carte">
+        <h3>Réseaux</h3>
+        <p>Fonctionnement des protocoles, analyse du trafic et des services exposés.</p>
+      </div>
+      <div class="carte">
+        <h3>OWASP Top 10</h3>
+        <p>Les failles web les plus courantes (injections, authentification, contrôle d'accès) et comment s'en protéger.</p>
+      </div>
+      <div class="carte">
+        <h3>Privilèges et données</h3>
+        <p>Gestion des droits des utilisateurs et protection des données personnelles.</p>
+      </div>
+      <div class="carte">
+        <h3>Cryptographie appliquée</h3>
+        <p>Hachage des mots de passe avec Argon2id, chiffrement des données au repos en AES-256-GCM, configuration TLS.</p>
+      </div>
+      <div class="carte">
+        <h3>Modélisation des menaces</h3>
+        <p>Analyse STRIDE d'une architecture : actifs, frontières de confiance, attaquants possibles et contre-mesures.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Mis en pratique</h2>
+    <div class="grille-2">
+      <div class="carte projet">
+        <div class="type">Défense · développement sécurisé</div>
+        <h3>Secure Notes</h3>
+        <p>Application de partage de notes et de fichiers où chaque risque de l'OWASP Top 10 est traité dans le code.
+        J'ai modélisé 24 menaces avec la méthode STRIDE, et chacune est reliée à une contre-mesure et à un test :
+        64 tests de sécurité au total (injections, XSS, CSRF, contrôle d'accès, force brute, upload).</p>
+        <div class="tags"><span>Argon2id</span><span>AES-256-GCM</span><span>CSP</span><span>STRIDE</span><span>Docker durci</span></div>
+        <div class="liens"><a class="bouton plein" href="https://github.com/edggaillard-pixel/secure-notes" target="_blank" rel="noopener">Voir le code ↗</a></div>
+      </div>
+      <div class="carte projet">
+        <div class="type">Audit · analyse de configuration</div>
+        <h3>websec-scanner</h3>
+        <p>Scanner en Python qui vérifie la configuration de sécurité d'un site : en-têtes HTTP, CSP, cookies, TLS et fichiers
+        sensibles exposés. Chaque problème est relié à l'OWASP Top 10 et à un CWE, et l'outil refuse de tourner sans
+        autorisation explicite.</p>
+        <div class="tags"><span>OWASP Top 10</span><span>CWE</span><span>TLS</span><span>Rapports JSON / HTML</span></div>
+        <div class="liens"><a class="bouton plein" href="https://github.com/edggaillard-pixel/websec-scanner" target="_blank" rel="noopener">Voir le code ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Aussi appliqué en projet universitaire</h2>
+    <div class="carte">
+      <h3>SportLegacy</h3>
+      <p>Sur ce site e-commerce, j'ai appliqué ces notions à l'authentification, à la gestion des sessions et à la protection
+      des données des utilisateurs.</p>
+      <div class="liens"><a class="bouton" href="https://l1.dptinfo-usmb.fr/~grp8/index.php" target="_blank" rel="noopener">Voir le projet ↗</a></div>
+    </div>
+  </section>
+
+  <nav class="suite"></nav>
+</main>
+
+<script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compétences - Edgar Gaillard</title>
+<meta name="description" content="Les compétences d'Edgar Gaillard en développement web, Python, Java, bases de données, cybersécurité et Unity, avec des projets pour preuves.">
+<link rel="canonical" href="https://edggaillard-pixel.github.io/pages/competences.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Compétences - Edgar Gaillard">
+<meta property="og:description" content="Les compétences d'Edgar Gaillard en développement web, Python, Java, bases de données, cybersécurité et Unity, avec des projets pour preuves.">
+<meta property="og:url" content="https://edggaillard-pixel.github.io/pages/competences.html">
+<meta property="og:image" content="https://edggaillard-pixel.github.io/images/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="sous-page" data-rubrique="competences">
+
+<canvas id="matrix"></canvas>
+<div id="ombre"></div>
+
+<div class="barre">
+  <a class="logo vers-menu" href="../index.html">&gt; edgar.gaillard<span>_</span></a>
+  <a class="retour vers-menu" href="../index.html">← menu</a>
+</div>
+
+<main class="page">
+  <header class="tete">
+    <div class="chemin">~/edgar/<b>competences</b></div>
+    <h1>Compétences et <em>preuves</em></h1>
+    <p class="intro">Chaque compétence est reliée à un projet ou à une expérience où je l'ai mise en pratique.</p>
+  </header>
+
+  <section class="section">
+    <h2>Développement web</h2>
+    <div class="competence">
+      <div><h3>HTML · CSS · JavaScript</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="niveau-texte">pratique régulière</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>MousseOver</small><p>Jeu multijoueur entièrement en JavaScript, en ligne sur GitHub Pages. <a href="https://edggaillard-pixel.github.io/mousseover/" target="_blank" rel="noopener">Jouer ↗</a></p></div>
+        <div class="preuve"><small>SportLegacy</small><p>Interface responsive du site e-commerce en HTML, CSS et JavaScript. <a href="https://l1.dptinfo-usmb.fr/~grp8/index.php" target="_blank" rel="noopener">Voir ↗</a></p></div>
+        <div class="preuve"><small>Portfolio</small><p>Ce site : scène 3D en Three.js, animations et pluie de code sur canvas.</p></div>
+        <div class="preuve"><small>CalqueLa</small><p>Avatar 3D déformable en Three.js, tatouage peint dans la texture de la peau, interface tactile. <a href="https://github.com/edggaillard-pixel/calquela" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>PHP</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">projet complet</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>SportLegacy</small><p>Logique métier côté serveur : authentification, sessions, panier et gestion des commandes.</p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Flask · React · API REST</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">projet complet</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Secure Notes</small><p>API REST en Flask avec validation stricte des données (Pydantic), interface React servie par Nginx sur la même origine. <a href="https://github.com/edggaillard-pixel/secure-notes" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Programmation</h2>
+    <div class="competence">
+      <div><h3>Python</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="niveau-texte">niveau avancé</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Licence MISPI</small><p>Deux années de programmation : algorithmique, structures de données, calcul scientifique.</p></div>
+        <div class="preuve"><small>Secure Notes</small><p>Backend complet en Flask et SQLAlchemy, avec une couche de sécurité organisée en modules. <a href="https://github.com/edggaillard-pixel/secure-notes" target="_blank" rel="noopener">Code ↗</a></p></div>
+        <div class="preuve"><small>websec-scanner</small><p>Outil en ligne de commande, publié comme paquet Python, avec des contrôles qui s'enregistrent tout seuls. <a href="https://github.com/edggaillard-pixel/websec-scanner" target="_blank" rel="noopener">Code ↗</a></p></div>
+        <div class="preuve"><small>Ordo</small><p>Application de bureau avec interface graphique, surveillance de dossier en temps réel et export en .exe. <a href="https://github.com/edggaillard-pixel/ordo" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Java</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="niveau-texte">niveau avancé</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Formation</small><p>Programmation orientée objet en licence MISPI puis en BUT Informatique.</p></div>
+        <div class="preuve"><small>CalqueLa</small><p>Backend Spring Boot en Java 21 : API de traitement d'images, partage de projets et tests. <a href="https://github.com/edggaillard-pixel/calquela" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>C · C++</h3><div class="niveau"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><div class="niveau-texte">C++ en cours d'apprentissage</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Formation</small><p>Programmation procédurale en C, et apprentissage du C++ pour approfondir la programmation système.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Bases de données et conception</h2>
+    <div class="competence">
+      <div><h3>SQL · MySQL · PostgreSQL</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="niveau-texte">création et administration</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>SportLegacy</small><p>Conception de l'architecture relationnelle, requêtes et administration de la base du site.</p></div>
+        <div class="preuve"><small>Secure Notes</small><p>Base PostgreSQL accédée uniquement via l'ORM, avec les données sensibles chiffrées avant stockage. <a href="https://github.com/edggaillard-pixel/secure-notes" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>UML · MERISE · PlantUML</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="niveau-texte">modélisation</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>SportLegacy</small><p>Modélisation UML et MERISE avant le développement.</p></div>
+        <div class="preuve"><small>Benevolt</small><p>Diagramme de cas d'utilisation en PlantUML et descriptions textuelles des cas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Systèmes et sécurité</h2>
+    <div class="competence">
+      <div><h3>Linux · réseaux · OWASP Top 10</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">autoformation</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>TryHackMe</small><p>Parcours en autonomie : environnement Linux, réseaux, failles web de l'OWASP Top 10, gestion des privilèges.</p></div>
+        <div class="preuve"><small>websec-scanner</small><p>Chaque problème détecté est classé dans l'OWASP Top 10 et relié à un CWE. <a href="https://github.com/edggaillard-pixel/websec-scanner" target="_blank" rel="noopener">Code ↗</a></p></div>
+        <div class="preuve"><small>SportLegacy</small><p>Sécurisation de l'authentification et des sessions, réflexion sur la protection des données.</p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Développement sécurisé · cryptographie</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">mis en pratique</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Secure Notes</small><p>Argon2id pour les mots de passe, AES-256-GCM pour les données, sessions révocables, protection CSRF et contrôle d'accès centralisé. <a href="https://github.com/edggaillard-pixel/secure-notes" target="_blank" rel="noopener">Code ↗</a></p></div>
+        <div class="preuve"><small>Secure Notes</small><p>Modélisation des menaces avec STRIDE : 24 menaces, chacune reliée à une contre-mesure et à un test.</p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Audit · TLS · en-têtes HTTP</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">mis en pratique</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>websec-scanner</small><p>Vérification des en-têtes de sécurité, de la CSP, des cookies, du certificat TLS et des fichiers sensibles exposés. <a href="https://github.com/edggaillard-pixel/websec-scanner" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Outils</h2>
+    <div class="competence">
+      <div><h3>Git · GitHub</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">usage courant</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>GitHub Pages</small><p>Versionnement et mise en ligne de mes projets web. <a href="https://github.com/edggaillard-pixel" target="_blank" rel="noopener">Mon GitHub ↗</a></p></div>
+        <div class="preuve"><small>GitHub Actions</small><p>Intégration continue sur websec-scanner : lint et tests relancés à chaque push sur Python 3.11 et 3.12. <a href="https://github.com/edggaillard-pixel/websec-scanner" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Tests automatisés · pytest</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">pratique régulière</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Secure Notes</small><p>64 tests de sécurité, un fichier par famille d'attaques : injections, XSS, CSRF, contrôle d'accès, force brute, upload. <a href="https://github.com/edggaillard-pixel/secure-notes" target="_blank" rel="noopener">Code ↗</a></p></div>
+        <div class="preuve"><small>websec-scanner</small><p>30 tests qui simulent les réponses des serveurs, pour tourner hors ligne. <a href="https://github.com/edggaillard-pixel/websec-scanner" target="_blank" rel="noopener">Code ↗</a></p></div>
+        <div class="preuve"><small>Ordo</small><p>Tests du tri, du renommage et du moteur de traitement des fichiers. <a href="https://github.com/edggaillard-pixel/ordo" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Docker · Docker Compose</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">projet complet</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Secure Notes</small><p>Quatre conteneurs (proxy Nginx, backend, base de données, Redis) durcis : non-root, système de fichiers en lecture seule, réseau interne. <a href="https://github.com/edggaillard-pixel/secure-notes" target="_blank" rel="noopener">Code ↗</a></p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Unity · C#</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="niveau-texte">autodidacte</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Projets perso</small><p>Moteur appris seul, en dehors de la formation, pour créer des prototypes de jeux.</p></div>
+        <div class="preuve"><small>EVA 1v1</small><p>FPS en écran partagé sous Unity 6 : ville générée par programme et destructible, optimisation de 28 à environ 40 images par seconde. <a href="eva.html">Voir ↗</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Savoir-être</h2>
+    <div class="competence">
+      <div><h3>Rigueur et précision</h3></div>
+      <div class="preuves">
+        <div class="preuve"><small>Actima-Covarel</small><p>Lecture de plans complexes, mesures exactes et respect strict des protocoles de sécurité.</p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Pédagogie</h3></div>
+      <div class="preuves">
+        <div class="preuve"><small>Alpha Éducation</small><p>Tutorat : expliquer simplement des notions complexes et adapter ma méthode à chaque élève.</p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Esprit d'équipe</h3></div>
+      <div class="preuves">
+        <div class="preuve"><small>Projets</small><p>SportLegacy et projets de BUT réalisés en équipe.</p></div>
+        <div class="preuve"><small>Sport</small><p>Football américain en Division 1, champion de France avec les Black Panthers de Thonon.</p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Organisation</h3></div>
+      <div class="preuves">
+        <div class="preuve"><small>Au quotidien</small><p>Études, entraînements de haut niveau et emplois saisonniers menés en parallèle.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Langues</h2>
+    <div class="competence">
+      <div><h3>Anglais</h3><div class="niveau"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="niveau-texte">niveau B2</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Lycée</small><p>Spécialité LLCE Anglais au baccalauréat, CV international rédigé en anglais.</p></div>
+      </div>
+    </div>
+    <div class="competence">
+      <div><h3>Allemand</h3><div class="niveau"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><div class="niveau-texte">niveau A2</div></div>
+      <div class="preuves">
+        <div class="preuve"><small>Scolarité</small><p>Bases à l'écrit et à l'oral.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="suite"></nav>
+</main>
+
+<script src="../main.js"></script>
+</body>
+</html>

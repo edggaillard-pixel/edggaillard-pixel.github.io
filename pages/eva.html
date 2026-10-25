@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVA 1v1 - Edgar Gaillard</title>
+<meta name="description" content="EVA 1v1, jeu de tir de géants inspiré de Neon Genesis Evangelion, développé par Edgar Gaillard avec Unity 6 : fiche technique et vidéo.">
+<link rel="canonical" href="https://edggaillard-pixel.github.io/pages/eva.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EVA 1v1 - Edgar Gaillard">
+<meta property="og:description" content="EVA 1v1, jeu de tir de géants inspiré de Neon Genesis Evangelion, développé par Edgar Gaillard avec Unity 6 : fiche technique et vidéo.">
+<meta property="og:url" content="https://edggaillard-pixel.github.io/pages/eva.html">
+<meta property="og:image" content="https://edggaillard-pixel.github.io/images/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="sous-page" data-rubrique="jeux">
+
+<canvas id="matrix"></canvas>
+<div id="ombre"></div>
+
+<div class="barre">
+  <a class="logo vers-menu" href="../index.html">&gt; edgar.gaillard<span>_</span></a>
+  <a class="retour vers-menu" href="../index.html">← menu</a>
+</div>
+
+<main class="page">
+  <header class="tete">
+    <div class="chemin">~/edgar/jeux/<b>eva-1v1</b></div>
+    <h1>EVA <em>1v1</em></h1>
+    <p class="intro">Un jeu de tir de géants inspiré de Neon Genesis Evangelion, développé seul avec Unity pendant 10 mois, du premier prototype jusqu'à une application Windows finale.</p>
+  </header>
+
+  <section class="section">
+    <div class="video" data-youtube="H2N-Jnc_hJA" data-fichier="../EVA_1v1_Presentation.mp4" data-titre="Vidéo de présentation d'EVA 1v1"></div>
+    <div class="liens">
+      <a class="bouton plein" href="https://www.youtube.com/watch?v=H2N-Jnc_hJA" target="_blank" rel="noopener">Voir la vidéo sur YouTube ↗</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="chiffres">
+      <div class="chiffre"><b>10 mois</b><span>de développement, du prototype à la version finale</span></div>
+      <div class="chiffre"><b>~80</b><span>scripts C# organisés en 5 modules</span></div>
+      <div class="chiffre"><b>23 126</b><span>objets générés dans Tokyo-3, fusionnés en 590 secteurs</span></div>
+      <div class="chiffre"><b>540 km/h</b><span>vitesse de course maximale d'une EVA de 40 m</span></div>
+      <div class="chiffre"><b>28 → 40</b><span>images par seconde sur PC portable après optimisation</span></div>
+      <div class="chiffre"><b>140 Mo</b><span>pour l'application Windows finale, Eva.exe</span></div>
+    </div>
+  </section>
+
+  <nav class="sommaire" aria-label="Sommaire de la page">
+    <a href="#jeu">Le jeu</a><a href="#architecture">Architecture</a><a href="#geant">Bouger comme un géant</a><a href="#combat">Combat</a><a href="#monde">Tokyo-3</a><a href="#anges">Les Anges</a><a href="#interface">Interface et son</a><a href="#rendu">Rendu et optimisation</a><a href="#outils">Outils et livraison</a>
+  </nav>
+
+  <section class="section" id="jeu">
+    <h2>Le jeu</h2>
+    <p>Le joueur pilote une EVA de 40 mètres dans la ville de Tokyo-3. Le projet a commencé par un premier prototype, puis a été
+    <strong>entièrement reconstruit</strong> dans sa version actuelle, jusqu'à une application Windows qui se lance depuis le Bureau.</p>
+    <div class="grille-2">
+      <div class="carte">
+        <h3>Duel en écran partagé</h3>
+        <p>Deux joueurs sur le même écran, au clavier et à la manette ou avec deux manettes. Le premier à 3 éliminations gagne.</p>
+      </div>
+      <div class="carte">
+        <h3>Missions solo</h3>
+        <p>Des combats contre trois Anges de la série, Ramiel, Sahaquiel et Leliel, chacun avec son comportement propre.</p>
+      </div>
+    </div>
+    <div class="tableau "><table><thead><tr><th>Pilote</th><th>Spécialité</th><th>Ultime</th></tr></thead><tbody><tr><td><strong>Shinji</strong> · EVA-01</td><td>Polyvalent</td><td>Mode berserk : l'EVA passe en rage et bondit sur l'adversaire</td></tr><tr><td><strong>Asuka</strong> · EVA-02</td><td>Couteau plus fort, plus rapide et plus long</td><td>Lance de Longinus : lancée, elle traverse immeubles et champ AT</td></tr><tr><td><strong>Rei</strong> · EVA-00</td><td>Fusil à positrons : 5 tirs très puissants, zoom de sniper</td><td>Opération Yashima : à genou, la ville s'éteint, tir géant à travers tout</td></tr></tbody></table></div>
+  </section>
+
+  <section class="section" id="architecture">
+    <h2>Architecture</h2>
+    <p>Le jeu tient presque entièrement dans le code : la ville, les effets, les sons et l'interface sont <strong>fabriqués par des scripts au lancement</strong>,
+    plutôt que placés à la main dans l'éditeur. Les seuls fichiers externes sont les modèles 3D, des animations Mixamo et les musiques.</p>
+    <div class="tableau "><table><thead><tr><th>Domaine</th><th>Technologie</th></tr></thead><tbody><tr><td>Moteur</td><td>Unity 6.3 LTS</td></tr><tr><td>Langage</td><td>C#</td></tr><tr><td>Rendu</td><td>URP en Forward+, post-traitement (bloom, tonemapping ACES, flou de mouvement)</td></tr><tr><td>Entrées</td><td>Nouvel Input System : clavier, souris et manette Xbox</td></tr><tr><td>Shaders</td><td>3 shaders écrits à la main en HLSL</td></tr></tbody></table></div>
+    <div class="tableau "><table><thead><tr><th>Module</th><th>Rôle</th></tr></thead><tbody><tr><td>Player</td><td>L'EVA du joueur : déplacement, caméra, animation, entrées, câble d'alimentation</td></tr><tr><td>Combat</td><td>Armes, dégâts, champ AT, ultimes et Anges</td></tr><tr><td>World</td><td>Tokyo-3, destruction, effets visuels et sons</td></tr><tr><td>Game</td><td>Déroulement des parties, écran partagé, missions, qualité graphique</td></tr><tr><td>UI</td><td>Menus, HUD du cockpit, écran de lancement et de victoire</td></tr></tbody></table></div>
+    <p>Chaque EVA est un objet autonome qui ajoute lui-même ses composants (champ AT, ultime, spécialités, câble). Les systèmes communiquent
+    <strong>par événements</strong> (dégâts, réapparition, changement de corps) plutôt que de se référencer directement : on peut ajouter un pilote
+    ou un Ange sans toucher au reste du jeu.</p>
+  </section>
+
+  <section class="section" id="geant">
+    <h2>Bouger comme un géant</h2>
+    <p>L'objectif était la sensation d'être un géant : <strong>lourd au démarrage, très rapide une fois lancé</strong>.</p>
+    <div class="grille-2">
+      <div class="carte">
+        <h3>Déplacement</h3>
+        <ul class="liste">
+          <li>course à élan : la vitesse grimpe tant qu'on court droit, jusqu'à 540 km/h</li>
+          <li>super-saut chargé, avec un aperçu de la trajectoire</li>
+          <li>glissade, frappe au sol, rebond contre les murs, escalade des toits bas</li>
+          <li>vitesse modifiée par le bouclier, la rage ou la batterie faible</li>
+        </ul>
+      </div>
+      <div class="carte">
+        <h3>Caméra</h3>
+        <ul class="liste">
+          <li>vue à la 1re personne, bascule en 3e personne</li>
+          <li>réglages différents à la souris et à la manette</li>
+          <li>recul, secousses aux impacts, lignes de vitesse façon anime</li>
+          <li>en 3e personne, les immeubles qui cachent l'EVA s'effacent</li>
+        </ul>
+      </div>
+      <div class="carte">
+        <h3>Animation</h3>
+        <ul class="liste">
+          <li>animations Mixamo adaptées à une EVA de 40 m</li>
+          <li>couche calculée en temps réel : tassement aux pas, bras qui pendent</li>
+          <li>cinématique inverse : les mains suivent la poignée et le garde-main de l'arme</li>
+          <li>poses dédiées : bouclier, rage, lancer de lance, tir à genou</li>
+        </ul>
+      </div>
+      <div class="carte">
+        <h3>Contrôles</h3>
+        <ul class="liste">
+          <li>un schéma clavier / souris et un schéma manette par joueur</li>
+          <li>gestion du second joueur en écran partagé</li>
+          <li>le tir n'est pris en compte que si le jeu a bien la main sur la souris</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="combat">
+    <h2>Le combat</h2>
+    <div class="grille-2">
+      <div class="carte">
+        <h3>Fusil palette</h3>
+        <p>Tir précis depuis la caméra, dispersion qui grandit en rafale, recul, traçantes, douilles éjectées et rechargement animé.
+        Ses obus arrachent des blocs aux immeubles.</p>
+      </div>
+      <div class="carte">
+        <h3>Couteau progressif</h3>
+        <p>Enchaînement de trois coups avec arcs lumineux, et lame qui vibre et chauffe.</p>
+      </div>
+      <div class="carte">
+        <h3>Champ AT</h3>
+        <p>Le bouclier octogonal de la série bloque les tirs de face. Chaque impact consomme de l'énergie, et il se brise s'il est épuisé
+        (4 secondes d'indisponibilité). Il est dessiné par un shader écrit pour le jeu.</p>
+      </div>
+      <div class="carte">
+        <h3>Câble d'alimentation</h3>
+        <p>L'EVA est reliée à une prise par un câble de 900 m tracé en temps réel. Trop loin, il s'éjecte : 60 secondes de batterie
+        pour rebrancher une prise, sinon l'EVA s'arrête.</p>
+      </div>
+    </div>
+    <p>Les modèles 3D des armes viennent de Sketchfab. Je les ai convertis avec <strong>un outil Python écrit pour l'occasion</strong> :
+    réorientation, changement de repère, textures réduites, matériaux adaptés à URP et points d'attache (canon, main gauche, éjection).</p>
+  </section>
+
+  <section class="section" id="monde">
+    <h2>Tokyo-3 et la destruction</h2>
+    <p>La ville est <strong>générée par le code à chaque lancement</strong>, en 3 à 6 secondes : avenues, gratte-ciel, maisons, voitures, arbres,
+    catapultes de lancement, relief de Hakone, lac Ashi et mont Fuji à l'horizon, dans une ambiance de coucher de soleil.</p>
+    <div class="grille-3">
+      <div class="carte">
+        <h3>Fusion en secteurs</h3>
+        <p>23 126 objets regroupés en 590 secteurs : on passe de milliers d'appels de dessin à quelques centaines.</p>
+      </div>
+      <div class="carte">
+        <h3>Destruction</h3>
+        <p>Chaque immeuble est découpé en blocs. Tirs, chocs et atterrissages les arrachent, ils tombent avec la vraie physique puis disparaissent.</p>
+      </div>
+      <div class="carte">
+        <h3>Effets maison</h3>
+        <p>Explosions, fumées, poussière, ondes de choc et éclairs dessinés par le code, sans système de particules importé.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="anges">
+    <h2>Les Anges</h2>
+    <p>Chaque Ange hérite d'une base commune (points de vie, champ AT, mort en croix de lumière comme dans la série) et ne définit que son
+    apparence et son comportement. Leur champ AT absorbe les dégâts de loin : il faut s'approcher, ou utiliser un ultime qui le transperce.</p>
+    <div class="tableau "><table><thead><tr><th>Ange</th><th>Ce qu'il fait</th><th>Comment le battre</th></tr></thead><tbody><tr><td><strong>Ramiel</strong></td><td>Octaèdre de cristal qui se hérisse de pointes, charge puis tire un rayon qui détruit tout</td><td>Esquiver ou bloquer le rayon avec le champ AT, puis s'approcher</td></tr><tr><td><strong>Sahaquiel</strong></td><td>Œil géant qui bombarde depuis le ciel, puis plonge sur la ville</td><td>Le rattraper avec le champ AT levé au moment de la chute</td></tr><tr><td><strong>Leliel</strong></td><td>Sa sphère n'est qu'une ombre : son vrai corps est le disque noir au sol, qui engloutit la ville</td><td>Tirer sur l'ombre au sol sans se faire aspirer</td></tr></tbody></table></div>
+    <p>Une mission suit le rythme de la série : alerte « PATTERN BLEU » avec sirène, barre de vie de l'Ange, alertes avant ses attaques,
+    puis écran « ANGE VAINCU » avec le temps réalisé. Chaque Ange a sa présence sonore : bourdonnement, cri synthétisé et explosion finale.</p>
+  </section>
+
+  <section class="section" id="interface">
+    <h2>Interface, menus et son</h2>
+    <div class="grille-2">
+      <div class="carte">
+        <h3>Menus</h3>
+        <p>Écran de lancement Grognon Production, puis un menu principal inspiré des premiers Halo, sur fond de Tokyo-3 : écran partagé,
+        entraînement, missions, options et crédits. Chaque joueur choisit son pilote et se déclare prêt.</p>
+      </div>
+      <div class="carte">
+        <h3>HUD du cockpit</h3>
+        <p>Inspiré des écrans de la NERV : intégrité, taux de synchro, champ AT, ultime, munitions, batterie, vitesse, altitude et cible verrouillée.</p>
+      </div>
+      <div class="carte">
+        <h3>Options</h3>
+        <p>Qualité graphique automatique ou manuelle, sensibilité, inversion de l'axe, volume, disposition de l'écran partagé, vibrations.</p>
+      </div>
+      <div class="carte">
+        <h3>Son</h3>
+        <p>Presque tous les sons sont synthétisés par le code au lancement : tirs, pas lourds avec servomoteurs, sirènes, bips des MAGI et voix des Anges.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rendu">
+    <h2>Rendu et optimisation</h2>
+    <div class="tableau "><table><thead><tr><th>Shader</th><th>Effet</th></tr></thead><tbody><tr><td>Champ AT</td><td>Octogones orange concentriques, bords brûlants et scintillement</td></tr><tr><td>Eau du lac</td><td>Vaguelettes, reflet du ciel et éclat du soleil couchant</td></tr><tr><td>Cristal d'Ange</td><td>Corps de cristal de Ramiel, arêtes lumineuses et énergie qui monte pendant la charge</td></tr></tbody></table></div>
+    <p>L'optimisation a été <strong>mesurée</strong> sur mon PC portable (puce graphique intégrée), avec une sonde de performance et un banc d'essai automatique :</p>
+    <div class="tableau etroit"><table><thead><tr><th>Étape</th><th>Images par seconde</th><th>Temps GPU</th></tr></thead><tbody><tr><td>Avant (1080p)</td><td>28</td><td>20 ms</td></tr><tr><td>Après (1080p, qualité moyenne)</td><td>34 à 44</td><td>11 ms</td></tr></tbody></table></div>
+    <ul class="liste">
+      <li>qualité graphique automatique selon la carte, avec agrandissement AMD FSR et ombres adaptées</li>
+      <li>occlusion ambiante coupée en qualité basse et moyenne : elle redessinait toute la ville une seconde fois</li>
+      <li>fusion de la ville en secteurs et matériaux partagés pour les gravats</li>
+      <li>moins d'ombres sur les petits objets et moins d'allocations mémoire à chaque image</li>
+      <li>une option d'Unity 6 testée au banc d'essai, puis retirée faute de gain mesuré</li>
+    </ul>
+  </section>
+
+  <section class="section" id="outils">
+    <h2>Outils, livraison et suite</h2>
+    <div class="grille-3">
+      <div class="carte">
+        <h3>Outils maison</h3>
+        <p>Un menu dans l'éditeur pour construire les scènes, tester une action en un clic, mesurer les performances et faire des captures.</p>
+      </div>
+      <div class="carte">
+        <h3>Méthode</h3>
+        <p>Chaque modification est compilée puis testée en jeu, avec captures et mesures, avant d'être gardée.</p>
+      </div>
+      <div class="carte">
+        <h3>Livraison</h3>
+        <p>Un bouton construit Eva.exe (140 Mo), sans les scènes de test, avec son icône et un raccourci sur le Bureau.</p>
+      </div>
+    </div>
+    <p><strong>La suite :</strong> ajouter Sachiel, le premier Ange de la série (marche dans la ville, rayons des yeux, point faible au cœur), et affiner la taille des armes à l'écran.</p>
+    <div class="tags"><span>Unity 6.3</span><span>C#</span><span>URP</span><span>HLSL</span><span>Input System</span><span>Génération procédurale</span><span>Optimisation</span><span>Python</span></div>
+  </section>
+
+  <p class="credits">Fan-game non commercial. Neon Genesis Evangelion © khara. Modèles 3D sur Sketchfab : allanromanreyes (EVA, CC BY-SA), Joshua Burrows (fusil palette),
+  Udon-San (couteau progressif), Kantrophe (fusil à positrons) et Rainbow_Slakot (Sachiel), sous licence CC BY. Animations : Mixamo (Adobe).</p>
+
+  <div class="liens bas-de-page">
+    <a class="bouton" href="jeux.html">← Jeux vidéo</a>
+    <a class="bouton" href="projets.html">Tous mes projets</a>
+  </div>
+</main>
+
+<script src="../main.js"></script>
+</body>
+</html>

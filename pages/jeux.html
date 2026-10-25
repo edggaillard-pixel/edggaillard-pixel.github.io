@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeux vidéo - Edgar Gaillard</title>
+<meta name="description" content="Les jeux vidéo d'Edgar Gaillard : EVA 1v1, un FPS de géants sous Unity, et MousseOver, un jeu multijoueur web.">
+<link rel="canonical" href="https://edggaillard-pixel.github.io/pages/jeux.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jeux vidéo - Edgar Gaillard">
+<meta property="og:description" content="Les jeux vidéo d'Edgar Gaillard : EVA 1v1, un FPS de géants sous Unity, et MousseOver, un jeu multijoueur web.">
+<meta property="og:url" content="https://edggaillard-pixel.github.io/pages/jeux.html">
+<meta property="og:image" content="https://edggaillard-pixel.github.io/images/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="sous-page" data-rubrique="jeux">
+
+<canvas id="matrix"></canvas>
+<div id="ombre"></div>
+
+<div class="barre">
+  <a class="logo vers-menu" href="../index.html">&gt; edgar.gaillard<span>_</span></a>
+  <a class="retour vers-menu" href="../index.html">← menu</a>
+</div>
+
+<main class="page">
+  <header class="tete">
+    <div class="chemin">~/edgar/<b>jeux</b></div>
+    <h1>Jeux <em>vidéo</em></h1>
+    <p class="intro">Le jeu vidéo est ma porte d'entrée préférée dans le code : un résultat qu'on voit et qu'on teste tout de suite.</p>
+  </header>
+
+  <section class="section">
+    <div class="grille-2">
+      <article class="carte projet large">
+        <div class="type">Jeu Unity · projet personnel · 10 mois</div>
+        <h3>EVA 1v1</h3>
+        <p class="meta">Unity 6.3 · C# · URP · HLSL · écran partagé</p>
+        <div class="video" data-youtube="H2N-Jnc_hJA" data-fichier="../EVA_1v1_Presentation.mp4" data-titre="Vidéo de présentation d'EVA 1v1"></div>
+        <p>Un jeu de tir de géants inspiré de Neon Genesis Evangelion : on pilote une EVA de 40 mètres dans Tokyo-3, en duel à deux sur le même
+        écran ou en mission solo contre les Anges. Développé seul pendant 10 mois, du prototype jusqu'à une application Windows finale.</p>
+        <div class="mini-chiffres">
+          <div><b>23 126</b><span>objets générés dans la ville, fusionnés en 590 secteurs</span></div>
+          <div><b>~80</b><span>scripts C# en 5 modules</span></div>
+          <div><b>28 → 40</b><span>images par seconde après optimisation</span></div>
+        </div>
+        <div class="grille-2 colonnes-liste">
+          <ul class="liste">
+            <li>3 pilotes jouables, chacun avec son arme spéciale et son ultime</li>
+            <li>Tokyo-3 générée par le code à chaque lancement et entièrement destructible</li>
+            <li>3 Anges aux comportements différents : Ramiel, Sahaquiel et Leliel</li>
+          </ul>
+          <ul class="liste">
+            <li>3 shaders écrits à la main : champ AT, eau du lac, cristal d'Ange</li>
+            <li>effets, sons et interface créés par le code, sans éléments importés</li>
+            <li>performances mesurées et optimisées sur PC portable</li>
+          </ul>
+        </div>
+        <div class="liens">
+          <a class="bouton plein" href="eva.html">Voir la fiche complète →</a>
+          <a class="bouton" href="https://www.youtube.com/watch?v=H2N-Jnc_hJA" target="_blank" rel="noopener">Vidéo YouTube ↗</a>
+        </div>
+      </article>
+      <article class="carte projet">
+        <div class="type">Jeu web</div>
+        <h3>MousseOver</h3>
+        <p class="meta">JavaScript · multijoueur</p>
+        <p>Restez dans le cercle qui rétrécit toutes les 10 secondes, esquivez les lasers puis les bombes, et soyez le dernier
+        en jeu. Jusqu'à 5 joueurs par salon.</p>
+        <div class="liens"><a class="bouton plein" href="https://edggaillard-pixel.github.io/mousseover/" target="_blank" rel="noopener">Jouer ↗</a></div>
+      </article>
+      <article class="carte projet">
+        <div class="type">Autoformation</div>
+        <h3>Unity</h3>
+        <p class="meta">C# · moteur de jeu</p>
+        <p>J'ai appris Unity seul, en dehors de la formation, pour comprendre la boucle de jeu, la physique et l'organisation
+        d'un projet de jeu complet.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Ce que ça m'apprend</h2>
+    <ul class="liste">
+      <li>penser en temps réel : boucle de jeu, performance et images par seconde</li>
+      <li>gérer de l'état partagé entre plusieurs joueurs</li>
+      <li>soigner l'expérience utilisateur et tester en continu</li>
+    </ul>
+  </section>
+
+  <nav class="suite"></nav>
+</main>
+
+<script src="../main.js"></script>
+</body>
+</html>

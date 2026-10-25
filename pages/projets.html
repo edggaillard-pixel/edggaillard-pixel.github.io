@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mes projets - Edgar Gaillard</title>
+<meta name="description" content="Les projets d'Edgar Gaillard : CalqueLa, Secure Notes, websec-scanner, Ordo, EVA 1v1, MousseOver et SportLegacy.">
+<link rel="canonical" href="https://edggaillard-pixel.github.io/pages/projets.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mes projets - Edgar Gaillard">
+<meta property="og:description" content="Les projets d'Edgar Gaillard : CalqueLa, Secure Notes, websec-scanner, Ordo, EVA 1v1, MousseOver et SportLegacy.">
+<meta property="og:url" content="https://edggaillard-pixel.github.io/pages/projets.html">
+<meta property="og:image" content="https://edggaillard-pixel.github.io/images/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="sous-page" data-rubrique="projets">
+
+<canvas id="matrix"></canvas>
+<div id="ombre"></div>
+
+<div class="barre">
+  <a class="logo vers-menu" href="../index.html">&gt; edgar.gaillard<span>_</span></a>
+  <a class="retour vers-menu" href="../index.html">← menu</a>
+</div>
+
+<main class="page">
+  <header class="tete">
+    <div class="chemin">~/edgar/<b>projets</b></div>
+    <h1>Mes <em>projets</em></h1>
+    <p class="intro">Des projets universitaires et personnels : un essayage de tatouages en 3D, une application sécurisée, un outil d'audit de sécurité, un logiciel de bureau, des sites web et un jeu multijoueur.</p>
+  </header>
+
+  <section class="section">
+    <h2>Projets Python</h2>
+    <div class="grille-2">
+      <article class="carte projet large">
+        <div class="type">Projet personnel · sécurité applicative</div>
+        <h3>Secure Notes</h3>
+        <p class="meta">Python · Flask · PostgreSQL · Redis · React · Nginx · Docker</p>
+        <p>Une application web pour stocker et partager des notes et des fichiers entre utilisateurs, en lecture ou en écriture.
+        Les fonctionnalités restent simples : tout l'intérêt est dans la sécurité. J'ai repris l'<strong>OWASP Top 10</strong>
+        point par point pour que chaque risque soit traité dans le code et vérifié par un test automatisé.</p>
+        <div class="mini-chiffres">
+          <div><b>64</b><span>tests de sécurité</span></div>
+          <div><b>24</b><span>menaces analysées (STRIDE)</span></div>
+          <div><b>AES-256</b><span>chiffrement des données au repos</span></div>
+        </div>
+        <div class="grille-2 colonnes-liste">
+          <ul class="liste">
+            <li>mots de passe hachés avec Argon2id</li>
+            <li>sessions révocables, cookie HttpOnly, Secure et SameSite=Strict</li>
+            <li>limitation des tentatives par IP et par compte contre la force brute</li>
+            <li>protection CSRF sur plusieurs couches</li>
+          </ul>
+          <ul class="liste">
+            <li>contrôle d'accès centralisé contre les failles IDOR</li>
+            <li>upload vérifié sur le contenu réel du fichier, avec liste blanche</li>
+            <li>CSP stricte, TLS 1.2 / 1.3 et en-têtes de sécurité</li>
+            <li>conteneurs durcis : non-root, lecture seule, réseau interne</li>
+          </ul>
+        </div>
+        <div class="liens"><a class="bouton plein" href="https://github.com/edggaillard-pixel/secure-notes" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a></div>
+      </article>
+
+      <article class="carte projet">
+        <div class="type">Projet personnel · audit de sécurité</div>
+        <h3>websec-scanner</h3>
+        <p class="meta">Python · httpx · Typer · Jinja2 · GitHub Actions</p>
+        <img class="apercu" src="../images/websec-rapport.jpg" alt="Rapport HTML généré par websec-scanner" loading="lazy">
+        <p>Un scanner de sécurité web non destructif : on lui donne l'adresse d'un site, il vérifie sa configuration et produit
+        un rapport JSON ou HTML, en français ou en anglais. Il ne fait que lire, il n'attaque rien.</p>
+        <ul class="liste">
+          <li>en-têtes de sécurité, CSP, cookies et configuration TLS</li>
+          <li>fichiers sensibles exposés (.git, .env, sauvegardes), avec une calibration pour éviter les faux positifs</li>
+          <li>chaque problème relié à l'OWASP Top 10 et à un CWE, avec une recommandation</li>
+          <li>refuse de démarrer sans l'option <code>--authorized</code>, pour un usage légal uniquement</li>
+          <li>30 tests et intégration continue avec GitHub Actions</li>
+        </ul>
+        <div class="liens"><a class="bouton plein" href="https://github.com/edggaillard-pixel/websec-scanner" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a></div>
+      </article>
+
+      <article class="carte projet">
+        <div class="type">Projet personnel · application de bureau</div>
+        <div class="titre-icone">
+          <img src="../images/ordo.png" alt="" width="44" height="44">
+          <h3>Ordo</h3>
+        </div>
+        <p class="meta">Python · CustomTkinter · watchdog · PyInstaller</p>
+        <p>Un logiciel qui range automatiquement le dossier Téléchargements. Dès qu'un téléchargement est terminé, il propose
+        un nom propre et une destination, et rien n'est déplacé sans validation.</p>
+        <ul class="liste">
+          <li>renommage normalisé : <code>Rapport d'Été FINAL (1).PDF</code> devient <code>2026-10-22_rapport_d_ete_final.pdf</code></li>
+          <li>tri par catégorie et règles personnalisées sur le nom</li>
+          <li>détection des doublons, sans jamais rien supprimer</li>
+          <li>historique avec annulation, icône en arrière-plan et notifications</li>
+          <li>logique séparée de l'interface et testée avec pytest, exportable en .exe</li>
+        </ul>
+        <div class="liens"><a class="bouton plein" href="https://github.com/edggaillard-pixel/ordo" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Jeu vidéo</h2>
+    <article class="carte projet">
+      <div class="type">Projet personnel · Unity</div>
+      <h3>EVA 1v1</h3>
+      <p class="meta">Unity 6 · C# · écran partagé · génération procédurale</p>
+      <p>Un FPS de géants dans l'univers de Neon Genesis Evangelion, en duel local ou en mission solo contre les Anges.
+      Tokyo-3 est générée par programme et entièrement destructible.</p>
+      <div class="liens">
+        <a class="bouton plein" href="eva.html">Voir la page du projet →</a>
+        <a class="bouton" href="https://www.youtube.com/watch?v=H2N-Jnc_hJA" target="_blank" rel="noopener">Vidéo YouTube ↗</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <h2>Projets web</h2>
+    <div class="grille-2">
+      <article class="carte projet large">
+        <div class="type">Projet personnel · application web 3D</div>
+        <h3>CalqueLa</h3>
+        <p class="meta">Java 21 · Spring Boot · Three.js · Vite · JavaScript</p>
+        <p>Une application web pour <strong>essayer un tatouage avant de le faire</strong>. Elle crée un avatar 3D à sa
+        morphologie, puis on y pose le motif dessiné par un tatoueur : le fond de l'image est retiré automatiquement et le
+        tatouage suit le corps quand on change la pose ou la silhouette.</p>
+        <div class="galerie">
+          <figure>
+            <img src="../images/calquela-avatar.jpg" alt="Avatar 3D de dos avec un tatouage posé entre les omoplates" loading="lazy">
+            <figcaption>Le motif posé sur le dos de l'avatar</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/calquela-import.jpg" alt="Fenêtre d'import d'un motif avec le fond du papier retiré" loading="lazy">
+            <figcaption>L'import : le fond du papier est retiré automatiquement</figcaption>
+          </figure>
+        </div>
+        <div class="mini-chiffres">
+          <div><b>36</b><span>morphologies combinées pour l'avatar</span></div>
+          <div><b>4096 px</b><span>texture de peau où le tatouage est peint</span></div>
+          <div><b>8</b><span>coupes de cheveux générées mèche par mèche</span></div>
+        </div>
+        <div class="grille-2 colonnes-liste">
+          <ul class="liste">
+            <li>avatar homme ou femme : taille, corpulence, musculature, proportions, teint</li>
+            <li>poses des bras, jambes, tête et buste, avec des poses rapides</li>
+            <li>détourage du dessin : fond papier et éclairage inégal retirés, taches nettoyées</li>
+            <li>motif posé à plat ou enroulé autour d'un membre, avec calques, miroir et annuler / rétablir</li>
+          </ul>
+          <ul class="liste">
+            <li>backend Spring Boot : traitement des images et partage de projets par lien</li>
+            <li>détourage de secours en JavaScript si le serveur ne répond pas</li>
+            <li>sécurité : CSP stricte, limitation de débit, contrôle des images avant décodage</li>
+            <li>export PNG, dont une planche quatre vues pour le tatoueur</li>
+          </ul>
+        </div>
+        <div class="liens"><a class="bouton plein" href="https://github.com/edggaillard-pixel/calquela" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a></div>
+      </article>
+
+      <article class="carte projet">
+        <div class="type">Projet personnel</div>
+        <h3>MousseOver</h3>
+        <p class="meta">JavaScript · multijoueur · GitHub Pages</p>
+        <p>Jeu multijoueur jouable dans le navigateur. Chaque joueur doit garder sa souris dans un cercle qui rétrécit toutes
+        les 10 secondes, en esquivant des lasers puis des bombes. Les parties se jouent dans des salons de 5 joueurs maximum.</p>
+        <ul class="liste">
+          <li>logique de jeu et collisions en JavaScript</li>
+          <li>système de salons à créer ou rejoindre</li>
+          <li>mise en ligne sans serveur dédié, sur GitHub Pages</li>
+        </ul>
+        <div class="liens"><a class="bouton plein" href="https://edggaillard-pixel.github.io/mousseover/" target="_blank" rel="noopener">Jouer à MousseOver ↗</a></div>
+      </article>
+
+      <article class="carte projet">
+        <div class="type">Projet universitaire · en équipe</div>
+        <h3>SportLegacy</h3>
+        <p class="meta">HTML · CSS · JavaScript · PHP · SQL</p>
+        <p>Plateforme e-commerce d'objets de collection sportifs, réalisée en équipe pendant ma licence MISPI.</p>
+        <ul class="liste">
+          <li>interface responsive en HTML, CSS et JavaScript</li>
+          <li>logique métier en PHP : authentification, sessions, panier et commandes</li>
+          <li>modélisation UML / MERISE et base de données relationnelle (MySQL, PostgreSQL)</li>
+        </ul>
+        <div class="liens"><a class="bouton plein" href="https://l1.dptinfo-usmb.fr/~grp8/index.php" target="_blank" rel="noopener">Voir le site ↗</a></div>
+      </article>
+
+      <article class="carte projet">
+        <div class="type">Projet personnel</div>
+        <h3>Ce portfolio</h3>
+        <p class="meta">Three.js · WebGL · JavaScript</p>
+        <p>Menu en 3D inspiré de l'interface de la Wii, avec des icônes modélisées en code, des transitions de caméra
+        et une pluie de code en arrière-plan.</p>
+        <div class="liens"><a class="bouton" href="https://github.com/edggaillard-pixel" target="_blank" rel="noopener">Mon GitHub ↗</a></div>
+      </article>
+
+      <article class="carte projet">
+        <div class="type">Projet BUT</div>
+        <h3>Benevolt</h3>
+        <p class="meta">UML · PlantUML · analyse</p>
+        <p>Analyse d'une plateforme de bénévolat : rédaction du diagramme de cas d'utilisation en PlantUML et des
+        descriptions textuelles de chaque cas, puis vérification de leur cohérence.</p>
+      </article>
+    </div>
+  </section>
+
+  <nav class="suite"></nav>
+</main>
+
+<script src="../main.js"></script>
+</body>
+</html>

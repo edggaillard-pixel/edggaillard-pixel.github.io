@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://edggaillard-pixel.github.io/sitemap.xml
