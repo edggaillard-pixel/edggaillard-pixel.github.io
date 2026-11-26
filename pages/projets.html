@@ -121,42 +121,42 @@
     <h2>Projets web</h2>
     <div class="grille-2">
       <article class="carte projet large">
-        <div class="type">Projet personnel · application web 3D</div>
+        <div class="type">Projet personnel · 2026</div>
         <h3>CalqueLa</h3>
-        <p class="meta">Java 21 · Spring Boot · Three.js · Vite · JavaScript</p>
-        <p>Une application web pour <strong>essayer un tatouage avant de le faire</strong>. Elle crée un avatar 3D à sa
-        morphologie, puis on y pose le motif dessiné par un tatoueur : le fond de l'image est retiré automatiquement et le
-        tatouage suit le corps quand on change la pose ou la silhouette.</p>
+        <p class="accroche">Essayez votre tatouage en 3D avant de passer sous l'aiguille.</p>
         <div class="galerie">
           <figure>
-            <img src="../images/calquela-avatar.jpg" alt="Avatar 3D de dos avec un tatouage posé entre les omoplates" loading="lazy">
-            <figcaption>Le motif posé sur le dos de l'avatar</figcaption>
+            <img src="../images/calquela-tatouage.jpg" alt="Avatar 3D vu de dos avec un tatouage mandala posé entre les omoplates" loading="lazy">
+            <figcaption>Un motif posé sur le dos de l'avatar</figcaption>
           </figure>
           <figure>
-            <img src="../images/calquela-import.jpg" alt="Fenêtre d'import d'un motif avec le fond du papier retiré" loading="lazy">
-            <figcaption>L'import : le fond du papier est retiré automatiquement</figcaption>
+            <img src="../images/calquela-personnages.jpg" alt="Interface de CalqueLa avec la galerie de personnages 3D et l'avatar sur mesure" loading="lazy">
+            <figcaption>La galerie de personnages et l'avatar sur mesure</figcaption>
           </figure>
         </div>
-        <div class="mini-chiffres">
-          <div><b>36</b><span>morphologies combinées pour l'avatar</span></div>
-          <div><b>4096 px</b><span>texture de peau où le tatouage est peint</span></div>
-          <div><b>8</b><span>coupes de cheveux générées mèche par mèche</span></div>
-        </div>
+        <p>Une application web qui permet d'essayer un tatouage sur un corps en 3D. On choisit un vrai personnage 3D dans une
+        galerie ou on crée un <strong>avatar sur mesure</strong> : homme ou femme, taille, corpulence, musculature, visage, teint
+        et coupe de cheveux.</p>
+        <p>On importe ensuite le dessin d'un tatoueur : le fond est retiré automatiquement, et on garde toutes les couleurs ou
+        seulement le trait noir. Le motif se pose directement sur la peau, à plat ou enroulé autour d'un bras ou d'une jambe,
+        sans limite de taille, et il <strong>suit le corps quand on change la pose</strong>. Le résultat s'exporte en image et
+        les projets se partagent, sans créer de compte.</p>
         <div class="grille-2 colonnes-liste">
           <ul class="liste">
-            <li>avatar homme ou femme : taille, corpulence, musculature, proportions, teint</li>
-            <li>poses des bras, jambes, tête et buste, avec des poses rapides</li>
-            <li>détourage du dessin : fond papier et éclairage inégal retirés, taches nettoyées</li>
-            <li>motif posé à plat ou enroulé autour d'un membre, avec calques, miroir et annuler / rétablir</li>
+            <li>frontend Three.js + Vite : les tatouages sont peints dans la texture de la peau, par un rendu dans l'espace UV</li>
+            <li>shader de peau à diffusion sous la surface et occlusion ambiante (GTAO)</li>
           </ul>
           <ul class="liste">
-            <li>backend Spring Boot : traitement des images et partage de projets par lien</li>
-            <li>détourage de secours en JavaScript si le serveur ne répond pas</li>
-            <li>sécurité : CSP stricte, limitation de débit, contrôle des images avant décodage</li>
-            <li>export PNG, dont une planche quatre vues pour le tatoueur</li>
+            <li>avatar paramétrique construit à partir des données MakeHuman (CC0), avec des morph targets</li>
+            <li>galerie de personnages Microsoft Rocketbox (MIT), animés par leur squelette</li>
+            <li>backend Java 21 / Spring Boot 3, déploiement sur GitHub Pages par GitHub Actions</li>
           </ul>
         </div>
-        <div class="liens"><a class="bouton plein" href="https://github.com/edggaillard-pixel/calquela" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a></div>
+        <div class="tags"><span>Three.js</span><span>JavaScript</span><span>WebGL</span><span>Java</span><span>Spring Boot</span><span>Vite</span><span>GitHub Actions</span></div>
+        <div class="liens">
+          <a class="bouton plein" href="https://edggaillard-pixel.github.io/calquela/" target="_blank" rel="noopener">Essayer en ligne ↗</a>
+          <a class="bouton" href="https://github.com/edggaillard-pixel/calquela" target="_blank" rel="noopener">Code source ↗</a>
+        </div>
       </article>
 
       <article class="carte projet">
@@ -211,3 +211,4 @@
 <script src="../main.js"></script>
 </body>
 </html>
+<!-- GROGNON -->
